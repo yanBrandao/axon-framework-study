@@ -1,8 +1,6 @@
 plugins {
-	kotlin("jvm") version "1.9.25"
-	kotlin("plugin.spring") version "1.9.25"
-	id("org.springframework.boot") version "3.4.1"
-	id("io.spring.dependency-management") version "1.1.7"
+	alias(libs.plugins.kotlin.spring)
+	alias(libs.plugins.kotlin.jvm)
 }
 
 group = "br.com.yantapajos"
@@ -19,12 +17,13 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter")
-	implementation("org.jetbrains.kotlin:kotlin-reflect")
-	runtimeOnly("com.h2database:h2")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
-	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+	implementation(libs.spring.boot.starter)
+	implementation(libs.kotlin.reflect)
+	runtimeOnly(libs.h2)
+	testImplementation(libs.spring.boot.starter.test)
+	testImplementation(libs.junit)
+	testImplementation(libs.junit.platform.launcher)
+	testImplementation(libs.kotest.runner)
 }
 
 kotlin {

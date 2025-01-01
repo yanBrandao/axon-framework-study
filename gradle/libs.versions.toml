@@ -1,0 +1,27 @@
+[versions]
+springBootVersion = "3.4.1"
+kotlinVersion = "1.9.25"
+h2Version = "2.1.214"
+kotestVersion = "5.6.2"
+junitPlataformVersion = "1.9.2"
+
+[plugins]
+kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlinVersion" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinVersion" }
+spring-boot = { id = "org.springframework.boot", version.ref = "springBootVersion" }
+
+[libraries]
+#Spring libs
+spring-boot-starter = { group = "org.springframework.boot", name = "spring-boot-starter", version.ref = "springBootVersion" }
+spring-boot-starter-test = { group = "org.springframework.boot", name = "spring-boot-starter-test", version.ref = "springBootVersion" }
+
+#Other libs
+kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlinVersion" }
+
+#Database
+h2 = { group = "com.h2database", name = "h2", version.ref = "h2Version" }
+
+#test
+junit = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit5", version.ref = "kotlinVersion" }
+junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher", version.ref = "junitPlataformVersion" }
+kotest-runner = { group = "io.kotest", name = "kotest-runner-junit5", version.ref = "kotestVersion" }
